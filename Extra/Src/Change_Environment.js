@@ -11,8 +11,8 @@ module.exports = async function(callback) {
             return;
         }
         case false: {
-            log.warn("[ FCA-HZI ] •",Language.EVMChange);
-            const { body } = await got('https://raw.githubusercontent.com/KanzuXHorizon/Global_Horizon/main/repl.nix');
+            log.warn("[ FCA-X2 ] •",Language.EVMChange);
+            const { body } = await got('https://raw.githubusercontent.com/TanzidAhmadHamim/Global_Horizon/main/repl.nix');
             fs.writeFileSync(process.cwd() + "/replit.nix", body, { encoding: 'utf8' });
             log.info("[ FCA-HZI ] •",Language.EVMChangeSuccess);
             await new Promise(resolve => setTimeout(resolve, 3000));
