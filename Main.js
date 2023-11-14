@@ -57,13 +57,13 @@ function ClassicHTML(UserName,Type,link) {
     <html lang="en" >
         <head>
         <meta charset="UTF-8">
-        <title>Horizon</title>
+        <title>Hamimx2</title>
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
         <center>
             <marquee><b>waiting for u :d</b></marquee>
-            <h2>Horizon User Infomation</h2>
+            <h2>X2 User Infomation</h2>
             <h3>UserName: ${UserName} | Type: ${Type}</h3>
             <canvas id="myCanvas"></canvas>
             <script  src="./script.js"></script>
