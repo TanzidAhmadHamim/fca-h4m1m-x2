@@ -1,7 +1,7 @@
 {
   "name": "fca-h4m1m-x2",
   "version": "1.5.3",
-  "description": "Facebook-chat-api protect and deploy by Kanzu and HZI Team",
+  "description": "Facebook-chat-api remake by One Man HamimX2",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
