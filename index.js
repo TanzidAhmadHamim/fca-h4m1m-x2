@@ -27,7 +27,7 @@ global.Fca = new Object({
             "PreKey": "",
             "AutoUpdate": true,
             "MainColor": "#9900FF",
-            "MainName": "[ FCA-HZI ]",
+            "MainName": "[ FCA-X2 ]",
             "Uptime": false,
             "Config": "default",
             "DevMode": false,
@@ -240,22 +240,22 @@ module.exports = function(loginData, options, callback) {
                                     try {
                                     //check if user using nvm 
                                         if (fs.existsSync(process.env.APPDATA + "/nvm/nvm.exe")) {
-                                            log.warn("[ FCA-UPDATE ] •", Language.UsingNVM);
+                                            log.warn("[ FCA-X2 ] •", Language.UsingNVM);
                                             process.exit(0);
                                         }
                                         //download NodeJS v14 for Windows and slient install
                                         await got('https://nodejs.org/dist/v14.17.0/node-v14.17.0-x64.msi').pipe(fs.createWriteStream(process.cwd() + "/node-v14.17.0-x64.msi"));
-                                        log.info("[ FCA-UPDATE ] •", Language.DownloadingNode);
+                                        log.info("[ FCA-X2 ] •", Language.DownloadingNode);
                                         await new Promise(resolve => setTimeout(resolve, 3000));
                                         execSync('msiexec /i node-v14.17.0-x64.msi /qn');
-                                        log.info("[ FCA-UPDATE ] •", Language.NodeDownloadingComplete);
+                                        log.info("[ FCA-X2 ] •", Language.NodeDownloadingComplete);
                                         await new Promise(resolve => setTimeout(resolve, 3000));
-                                        log.info("[ FCA-UPDATE ] •", Language.RestartRequire);
+                                        log.info("[ FCA-X2 ] •", Language.RestartRequire);
                                         Database(true).set("NeedRebuild", true);
                                         process.exit(0);
                                     }
                                     catch (e) {
-                                        log.error("[ FCA-UPDATE ] •",Language.ErrNodeDownload);
+                                        log.error("[ FCA-X2 ] •",Language.ErrNodeDownload);
                                         process.exit(0);
                                     }
                                 }
@@ -263,31 +263,31 @@ module.exports = function(loginData, options, callback) {
 
                                     try {
                                         if (process.env["REPL_ID"] != undefined) {
-                                            log.warn("[ FCA-UPDATE ] •", "Look like you are using Replit, and didn't have replit.nix file in your project, i don't know how to help you, hmm i will help you pass this step, but you need to install NodeJS v14 by yourself, and restart your repl");
+                                            log.warn("[ FCA-X2 ] •", "Look like you are using Replit, and didn't have replit.nix file in your project, i don't know how to help you, hmm i will help you pass this step, but you need to install NodeJS v14 by yourself, and restart your repl");
                                             Database(true).set('SkipReplitNix', true);
                                             await new Promise(resolve => setTimeout(resolve, 3000));
                                             process.exit(1);
                                         }
                                             //check if user using nvm 
                                             if (fs.existsSync(process.env.HOME + "/.nvm/nvm.sh")) {
-                                                log.warn("[ FCA-UPDATE ] •", Language.UsingNVM);
+                                                log.warn("[ FCA-X2 ] •", Language.UsingNVM);
                                                 process.exit(0);
                                             }
                                             //download NodeJS v14 for Linux and slient install
                                             await got('https://nodejs.org/dist/v14.17.0/node-v14.17.0-linux-x64.tar.xz').pipe(fs.createWriteStream(process.cwd() + "/node-v14.17.0-linux-x64.tar.xz"));
-                                            log.info("[ FCA-UPDATE ] •", Language.DownloadingNode);
+                                            log.info("[ FCA-X2 ] •", Language.DownloadingNode);
                                             await new Promise(resolve => setTimeout(resolve, 3000));
                                             execSync('tar -xf node-v14.17.0-linux-x64.tar.xz');
                                             execSync('cd node-v14.17.0-linux-x64');
                                             execSync('sudo cp -R * /usr/local/');
-                                            log.info("[ FCA-UPDATE ] •", Language.NodeDownloadingComplete);
+                                            log.info("[ FCA-X2 ] •", Language.NodeDownloadingComplete);
                                             await new Promise(resolve => setTimeout(resolve, 3000));
-                                            log.info("[ FCA-UPDATE ] •",Language.RestartingN);
+                                            log.info("[ FCA-X2 ] •",Language.RestartingN);
                                             Database(true).set("NeedRebuild", true);
                                             process.exit(1);                                
                                         }
                                         catch (e) {
-                                            log.error("[ FCA-UPDATE ] •",Language.ErrNodeDownload);
+                                            log.error("[ FCA-X2 ] •",Language.ErrNodeDownload);
                                             process.exit(0);
                                         }
                                 }
@@ -295,24 +295,24 @@ module.exports = function(loginData, options, callback) {
                                     try {
                                         //check if user using nvm 
                                         if (fs.existsSync(process.env.HOME + "/.nvm/nvm.sh")) {
-                                            log.warn("[ FCA-UPDATE ] •", Language.UsingNVM);
+                                            log.warn("[ FCA-X2 ] •", Language.UsingNVM);
                                             process.exit(0);
                                         }
                                         //download NodeJS v14 for MacOS and slient install
                                         await got('https://nodejs.org/dist/v14.17.0/node-v14.17.0-darwin-x64.tar.gz').pipe(fs.createWriteStream(process.cwd() + "/node-v14.17.0-darwin-x64.tar.gz"));
-                                        log.info("[ FCA-UPDATE ] •", Language.DownloadingNode);
+                                        log.info("[ FCA-X2 ] •", Language.DownloadingNode);
                                         await new Promise(resolve => setTimeout(resolve, 3000));
                                         execSync('tar -xf node-v14.17.0-darwin-x64.tar.gz');
                                         execSync('cd node-v14.17.0-darwin-x64');
                                         execSync('sudo cp -R * /usr/local/');
-                                        log.info("[ FCA-UPDATE ] •", Language.NodeDownloadingComplete);
+                                        log.info("[ FCA-X2 ] •", Language.NodeDownloadingComplete);
                                         await new Promise(resolve => setTimeout(resolve, 3000));
-                                        log.info("[ FCA-UPDATE ] •",Language.RestartingN);
+                                        log.info("[ FCA-X2 ] •",Language.RestartingN);
                                         Database(true).set("NeedRebuild", true);
                                         process.exit(1);
                                     }
                                     catch (e) {
-                                        log.error("[ FCA-UPDATE ] •",Language.ErrNodeDownload);
+                                        log.error("[ FCA-X2 ] •",Language.ErrNodeDownload);
                                         process.exit(0);
                                     }
                                 }
@@ -320,7 +320,7 @@ module.exports = function(loginData, options, callback) {
                         }
                         catch (e) {
                             console.log(e);
-                            log.error("[ FCA-UPDATE ] •","NodeJS v14 Installation Failed, Please Try Again and Contact fb.com/Lazic.Kanzu!");
+                            log.error("[ FCA-X2 ] •","NodeJS v14 Installation Failed, Please Try Again and Contact fb.com/Lazic.Kanzu!");
                             process.exit(0);
                         }
                     }
@@ -336,11 +336,11 @@ module.exports = function(loginData, options, callback) {
             }
             catch (e) {
                 console.log(e);
-                log.error("[ FCA-UPDATE ] •",Language.ErrRebuilding);
+                log.error("[ FCA-X2 ] •",Language.ErrRebuilding);
             }
-            log.info("[ FCA-UPDATE ] •",Language.SuccessRebuilding);
+            log.info("[ FCA-X2 ] •",Language.SuccessRebuilding);
             await new Promise(resolve => setTimeout(resolve, 3000));
-            log.info("[ FCA-UPDATE ] •",Language.RestartingN);
+            log.info("[ FCA-X2 ] •",Language.RestartingN);
             process.exit(1);
         }
 
@@ -354,7 +354,7 @@ module.exports = function(loginData, options, callback) {
                     }
                 }
                 else {
-                    log.warn("[ FCA-UPDATE ] •", "Error Stable Version, Please Check Your Stable Version in FastConfig.json, Automatically turn off Stable Version!");
+                    log.warn("[ FCA-X2 ] •", "Error Stable Version, Please Check Your Stable Version in FastConfig.json, Automatically turn off Stable Version!");
                         global.Fca.Require.FastConfig.Stable_Version.Accept = false;
                         global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(global.Fca.Require.FastConfig, null, "\t"));
                     process.exit(1);
@@ -379,8 +379,8 @@ module.exports = function(loginData, options, callback) {
         return login(loginData, options, callback);
     }).catch(function(err) {
         console.log(err)
-            log.error("[ FCA-UPDATE ] •",Language.UnableToConnect);
-            log.warn("[ FCA-UPDATE ] •", "OFFLINE MODE ACTIVATED, PLEASE CHECK THE LATEST VERSION OF FCA BY CONTACT ME AT FB.COM/LAZIC.KANZU");
+            log.error("[ FCA-X2 ] •",Language.UnableToConnect);
+            log.warn("[ FCA-X2 ] •", "OFFLINE MODE ACTIVATED, PLEASE CHECK THE LATEST VERSION OF FCA BY CONTACT ME AT FB.COM/HACKER.HAMIM.BHAI");
         return login(loginData, options, callback);
     });
 };
