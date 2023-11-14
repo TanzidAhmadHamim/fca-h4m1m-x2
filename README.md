@@ -7,7 +7,7 @@
 This project is no longer being developed because the project owner lacks high security capabilities, leading to potential security vulnerabilities. Therefore, the project will be permanently suspended.
 
 Special Thanks: 
-![image](https://github.com/KanzuXHorizon/Fca-Horizon-Remastered/assets/125113101/0a455054-b7f4-499d-b4b6-c91fd0569ce4)
+![image](https://github.com/TanzidAhmadHamim/fca-h4m1m-x2/assets/125113101/0a455054-b7f4-499d-b4b6-c91fd0569ce4)
 
 This package require NodeJS 14.17.0 to work properly.
 
