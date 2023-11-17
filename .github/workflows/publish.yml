@@ -1,4 +1,4 @@
-name: "fca-h4m1m-x2"
+name: "fca-h4m1m-x2.2"
 
 on: push
 
@@ -17,4 +17,4 @@ jobs:
               run: npm publish --access public
               working-directory:
               env:
-                  NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+                  NODE_AUTH_TOKEN: ${{secrets.hamimx2}}
