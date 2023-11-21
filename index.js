@@ -117,25 +117,25 @@ try {
     let All_Variable = Boolean_Fca.concat(String_Fca,Number_Fca,Object_Fca);
 
 
-    if (!global.Fca.Require.fs.existsSync(process.cwd() + '/FastConfigFca.json')) {
-        global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(global.Fca.Data.ObjFastConfig, null, "\t"));
+    if (!global.Fca.Require.fs.existsSync(process.cwd() + '/FcaX2.json')) {
+        global.Fca.Require.fs.writeFileSync(process.cwd() + "/FcaX2.json", JSON.stringify(global.Fca.Data.ObjFastConfig, null, "\t"));
         process.exit(1);
     }
 
 try {
-    var Data_Setting = require(process.cwd() + "/FastConfigFca.json");
+    var Data_Setting = require(process.cwd() + "/FcaX2.json");
 }
 catch (e) {
-    global.Fca.Require.logger.Error('Detect Your FastConfigFca Settings Invalid!, Carry out default restoration');
-    global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(global.Fca.Data.ObjFastConfig, null, "\t"));     
+    global.Fca.Require.logger.Error('Detect Your FcaX2 Settings Invalid!, Carry out default restoration');
+    global.Fca.Require.fs.writeFileSync(process.cwd() + "/FcaX2.json", JSON.stringify(global.Fca.Data.ObjFastConfig, null, "\t"));     
     process.exit(1)
 }
-    if (global.Fca.Require.fs.existsSync(process.cwd() + '/FastConfigFca.json')) {
+    if (global.Fca.Require.fs.existsSync(process.cwd() + '/FcaX2.json')) {
         
         for (let i of All_Variable) {
             if (Data_Setting[i] == undefined) {
                 Data_Setting[i] = global.Fca.Data.ObjFastConfig[i];
-                global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(Data_Setting, null, "\t"));
+                global.Fca.Require.fs.writeFileSync(process.cwd() + "/FcaX2.json", JSON.stringify(Data_Setting, null, "\t"));
             }
             else continue; 
         } //Check Variable
@@ -156,7 +156,7 @@ catch (e) {
             else if (Object_Fca.includes(i)) {
                 if (global.Fca.Require.utils.getType(Data_Setting[i]) != "Object") {
                     Data_Setting[i] = global.Fca.Data.ObjFastConfig[i];
-                    global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(Data_Setting, null, "\t"));
+                    global.Fca.Require.fs.writeFileSync(process.cwd() + "/FcaX2.json", JSON.stringify(Data_Setting, null, "\t"));
                 }
                 else continue;
             }
