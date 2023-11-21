@@ -17,4 +17,4 @@ jobs:
               run: npm publish --access public
               working-directory:
               env:
-                  NODE_AUTH_TOKEN: ${{secrets.hamimx2}}
+                  NODE_AUTH_TOKEN: ${{secrets.HAMIMX2}}
