@@ -1,6 +1,6 @@
 {
   "name": "fca-h4m1m-x2",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "Facebook-chat-api remake by One Man HamimX2",
   "main": "index.js",
   "scripts": {
